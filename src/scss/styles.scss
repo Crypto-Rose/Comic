@@ -1,6 +1,7 @@
 
-@mixin colorLetter {
+@mixin letter {
     color: white;
+    font-family: 'CaviarDreams';   
 }
 
 
@@ -10,14 +11,13 @@
 }
 
 body {
-    background-image: url(../img/fondo.png);
+    background-image: url(../img/back.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 h1,h4,h6,h2 {
-    @include colorLetter;    
-    font-family: 'CaviarDreams';                  
+    @include letter;                       
 }
 
 .comic {

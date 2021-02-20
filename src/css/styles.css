@@ -3,7 +3,7 @@
   src: local("CaviarDreams"), url(../font/CaviarDreams.ttf) format("truetype"); }
 
 body {
-  background-image: url(../img/fondo.png);
+  background-image: url(../img/back.png);
   background-size: cover;
   background-repeat: no-repeat; }
 
