@@ -9,21 +9,10 @@ function App() {
 
     const [imgData,setImgData] = useState([]);
 
-    useEffect(() => {
-        const requestOptions = {
-            method: 'get',
-            url: 'https://xkcd.com/566/info.0.json',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',  
-                'Access-Control-Allow-Origin':'*',    
-                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE',
-                'Access-Control-Allow-Headers':'*'                                           
-            },          
-        };  
-        Axios(requestOptions)        
+    useEffect(async () => {       
+        await Axios.get('https://xkcd.com/566/info.0.json')        
         .then(response => response)                   
-        .then(data => setImgData(data.data))
-                      
+        .then(data => setImgData(data.data))                      
     },[setImgData]); 
    
     return(
