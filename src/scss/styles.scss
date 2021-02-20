@@ -1,0 +1,35 @@
+
+@mixin colorLetter {
+    color: white;
+}
+
+
+@font-face {   
+    font-family: 'CaviarDreams';
+    src: local('CaviarDreams'), url(../font/CaviarDreams.ttf ) format('truetype');
+}
+
+body {
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1,h4,h6,h2 {
+    @include colorLetter;    
+    font-family: 'CaviarDreams';                  
+}
+
+.comic {
+    width: 100%;
+    box-shadow: 15px 6px 10px #0000004a;
+}
+
+.rating li {
+    font-size: 55px;     
+    
+    &:hover {
+        transform: rotateZ(10deg);        
+    }
+}
+   
