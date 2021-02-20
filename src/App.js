@@ -14,12 +14,18 @@ function App() {
     const desc = ['Terrible', 'Malo', 'Normal', 'Bueno', 'Increible'];
 
     useEffect(() => {
-        
-        Axios.get('https://xkcd.com/566/info.0.json',cors())
-        .then(response => response)
-        .then((data) => {                
-            setImgData(data.data)
-        })                   
+        const requestOptions = {
+            method: 'get',
+            url: 'https://xkcd.com/566/info.0.json',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',  
+                'Access-Control-Allow-Origin':'*',    
+                'Access-Control-Allow-Methods': 'GET, POST, PUT',
+                'Access-Control-Allow-Headers':'*'                                           
+            },          
+        };  
+        axios(requestOptions)
+                      
     },[setImgData]);
 
     const saveRating = (data) => {        
