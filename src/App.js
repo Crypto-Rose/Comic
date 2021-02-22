@@ -14,13 +14,8 @@ function App() {
     },[]); 
 
      const receiveData=()=>{
-        Axios.get('https://xkcd.com/566/info.0.json',{
-            headers:{
-                'Access-Control-Allow-Origin':'*'
-            }
-        })        
-        .then(response => response)                   
-        .then(data => setImgData(data.data))       
+        Axios.get('https://xkcd.com/566/info.0.json')        
+        .then(response => setImgData(response.data))                        
     }
    
     return(
