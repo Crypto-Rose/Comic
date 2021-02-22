@@ -9,11 +9,19 @@ function App() {
 
     const [imgData,setImgData] = useState([]);
 
-    useEffect(async () => {       
-        await Axios.get('https://xkcd.com/566/info.0.json')        
+    useEffect( () => {       
+        receiveData()       
+    },[]); 
+
+     const receiveData=()=>{
+        Axios.get('https://xkcd.com/566/info.0.json',{
+            headers:{
+                'Access-Control-Allow-Origin':'*'
+            }
+        })        
         .then(response => response)                   
-        .then(data => setImgData(data.data))                      
-    },[setImgData]); 
+        .then(data => setImgData(data.data))       
+    }
    
     return(
        
